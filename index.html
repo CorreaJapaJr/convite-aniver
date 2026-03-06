@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Gerador de Convites</title>
+    <link
+      rel="stylesheet"
+      href="styles.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Gerador de Convites</h1>
+      </header>
+
+      <form id="eventForm">
+        <div class="form-section">
+          <h2>Informações do Evento</h2>
+
+          <div class="form-group">
+            <label for="eventTitle">Título do Evento *</label>
+            <input
+              type="text"
+              id="eventTitle"
+              required
+            />
+            <span class="error-message"></span>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="startDate">Data de Início *</label>
+              <input
+                type="datetime-local"
+                id="startDate"
+                required
+              />
+              <span class="error-message"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="endDate">Data de Fim *</label>
+              <input
+                type="datetime-local"
+                id="endDate"
+                required
+              />
+              <span class="error-message"></span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="eventType">Tipo *</label>
+            <select
+              id="eventType"
+              required
+            >
+              <option value="">Selecione...</option>
+              <option value="presencial">Presencial</option>
+              <option value="online">Online</option>
+            </select>
+            <span class="error-message"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="location">Local *</label>
+            <input
+              type="text"
+              id="location"
+              required
+            />
+            <span class="error-message"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="description">Descrição do Evento *</label>
+            <textarea
+              id="description"
+              rows="4"
+              required
+            ></textarea>
+            <span class="error-message"></span>
+          </div>
+        </div>
+
+        <div class="form-section">
+          <h2>Personalização</h2>
+
+          <div class="form-group">
+            <label for="coverImage">Imagem de Capa</label>
+            <input
+              type="file"
+              id="coverImage"
+              accept="image/*"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="primaryColor">Cor Principal</label>
+            <input
+              type="color"
+              id="primaryColor"
+              value="#6366f1"
+            />
+          </div>
+
+          <div class="form-group">
+            <label>Tema</label>
+            <div class="theme-options">
+              <label class="radio-option">
+                <input
+                  type="radio"
+                  name="theme"
+                  value="modern"
+                  checked
+                />
+                <span>Moderno</span>
+              </label>
+              <label class="radio-option">
+                <input
+                  type="radio"
+                  name="theme"
+                  value="elegant"
+                />
+                <span>Elegante</span>
+              </label>
+              <label class="radio-option">
+                <input
+                  type="radio"
+                  name="theme"
+                  value="minimal"
+                />
+                <span>Minimalista</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Estilo</label>
+            <div class="style-toggle">
+              <label class="radio-option">
+                <input
+                  type="radio"
+                  name="style"
+                  value="light"
+                  checked
+                />
+                <span>Claro</span>
+              </label>
+              <label class="radio-option">
+                <input
+                  type="radio"
+                  name="style"
+                  value="dark"
+                />
+                <span>Escuro</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-section">
+          <h2>Contato</h2>
+
+          <div class="form-group">
+            <label for="email">E-mail *</label>
+            <input
+              type="email"
+              id="email"
+              required
+            />
+            <span class="error-message"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Telefone *</label>
+            <input
+              type="tel"
+              id="phone"
+              required
+            />
+            <span class="error-message"></span>
+          </div>
+        </div>
+
+        <button
+          type="submit"
+          class="btn-generate"
+        >
+          Gerar Convite
+        </button>
+      </form>
+
+      <div
+        id="invitePreview"
+        class="invite-preview hidden"
+      ></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

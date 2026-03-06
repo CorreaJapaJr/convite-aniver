@@ -1,0 +1,272 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+    Cantarell, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  padding: 2rem 1rem;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+header {
+  text-align: center;
+  color: white;
+  margin-bottom: 2rem;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+#eventForm {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.form-section {
+  margin-bottom: 2rem;
+}
+
+.form-section h2 {
+  font-size: 1.5rem;
+  color: #1f2937;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.5rem;
+}
+
+input[type='text'],
+input[type='email'],
+input[type='tel'],
+input[type='datetime-local'],
+select,
+textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #6366f1;
+}
+
+input.error,
+select.error,
+textarea.error {
+  border-color: #ef4444;
+}
+
+.error-message {
+  display: block;
+  color: #ef4444;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  min-height: 1.25rem;
+}
+
+input[type='file'] {
+  padding: 0.5rem;
+}
+
+input[type='color'] {
+  width: 100px;
+  height: 50px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.theme-options,
+.style-toggle {
+  display: flex;
+  gap: 1rem;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.radio-option:hover {
+  border-color: #6366f1;
+}
+
+.radio-option input[type='radio'] {
+  margin-right: 0.5rem;
+}
+
+.radio-option input[type='radio']:checked + span {
+  color: #6366f1;
+  font-weight: 600;
+}
+
+.btn-generate {
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.125rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.btn-generate:hover {
+  transform: translateY(-2px);
+}
+
+.btn-generate:active {
+  transform: translateY(0);
+}
+
+.invite-preview {
+  margin-top: 2rem;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+.invite-preview.hidden {
+  display: none;
+}
+
+.invite-card {
+  padding: 3rem 2rem;
+  position: relative;
+}
+
+.invite-card.light {
+  background: white;
+  color: #1f2937;
+}
+
+.invite-card.dark {
+  background: #1f2937;
+  color: white;
+}
+
+.invite-cover {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  margin-bottom: 2rem;
+  border-radius: 8px;
+}
+
+.invite-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.invite-details {
+  margin: 1.5rem 0;
+}
+
+.invite-detail-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: 1.125rem;
+}
+
+.invite-detail-item strong {
+  margin-right: 0.5rem;
+}
+
+.invite-description {
+  margin: 1.5rem 0;
+  line-height: 1.6;
+  font-size: 1.125rem;
+}
+
+.invite-contact {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 2px solid currentColor;
+  opacity: 0.8;
+}
+
+.invite-contact p {
+  margin-bottom: 0.5rem;
+}
+
+.theme-modern .invite-title {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.theme-elegant .invite-title {
+  font-family: Georgia, serif;
+  font-style: italic;
+}
+
+.theme-minimal .invite-card {
+  padding: 2rem;
+}
+
+.theme-minimal .invite-title {
+  font-weight: 400;
+}
+
+@media (max-width: 768px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .theme-options,
+  .style-toggle {
+    flex-direction: column;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  .invite-title {
+    font-size: 2rem;
+  }
+}
